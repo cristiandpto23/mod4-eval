@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sistema de Gestión de Tareas</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .contenedor-formulario {
+                background: #f5f5f5;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 30px;
+            }
+
+            .grupo-formulario {
+                margin-bottom: 15px;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            button {
+                background: #007bff;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            .btn-eliminar {
+                background: #dc3545;
+            }
+
+            .btn-completar {
+                background: #28a745;
+            }
+
+            .item-tarea {
+                background: white;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 10px;
+            }
+
+            .item-tarea.completada {
+                opacity: 0.6;
+            }
+
+            .acciones-tarea {
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .cargando {
+                text-align: center;
+                padding: 20px;
+                color: #666;
+            }
+
+            .error {
+                background: #f8d7da;
+                color: #721c24;
+                padding: 10px;
+                border-radius: 4px;
+                margin: 10px 0;
+            }
+
+            .exito {
+                background: #d4edda;
+                color: #155724;
+                padding: 10px;
+                border-radius: 4px;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sistema de Gestión de Tareas</h1>
+
+        <!-- Formulario para agregar tareas -->
+        <div class="contenedor-formulario">
+            <h2>Agregar Nueva Tarea</h2>
+            <form id="formulario-tarea">
+                <div class="grupo-formulario">
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" name="titulo" required />
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" required></textarea>
+                </div>
+
+                <button type="submit">Agregar Tarea</button>
+            </form>
+        </div>
+
+        <!-- Contenedor para mostrar las tareas -->
+        <div id="contenedor-tareas">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Lista de Tareas</h2>
+            </div>
+            <div id="lista-tareas">
+                <!-- Las tareas se mostrarán aquí dinámicamente -->
+            </div>
+        </div>
+
+        <script src="gestionTareas.js"></script>
+    </body>
+</html>
